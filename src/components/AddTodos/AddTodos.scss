@@ -1,0 +1,32 @@
+.AddTodo {
+    margin-bottom: 20px;
+}
+
+.AddTodo div:first-child {
+    margin-bottom: 10px;
+}
+
+.AddTodo .AddTodo__firstLine input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.AddTodo .AddTodo__secondLine input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+
+.block {
+    display: flex;
+    flex-direction: row;
+
+    &__label {
+        display: block;
+        margin-right: 20px;
+    }
+
+    &__list {
+        display: block;
+    }
+}

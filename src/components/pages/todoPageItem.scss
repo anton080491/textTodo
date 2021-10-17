@@ -1,0 +1,31 @@
+.TodoPageItem {
+    width: 100%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: #fff;
+
+    &__description {
+        padding-bottom: 10px;
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        button {
+            margin-right: 10px;
+            border-radius: 10px;
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}

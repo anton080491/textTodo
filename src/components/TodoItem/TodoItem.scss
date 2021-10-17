@@ -1,0 +1,79 @@
+.TodoItem {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin-top: 20px;
+    background-color: green;
+    border-radius: 10px;
+    transition: .3s;
+    color: #fff;
+
+    &:hover {
+        transform: scale(1.02);
+        background-color: #00cb00
+    }
+
+    &__block button {
+        margin-right: 10px;
+        border-radius: 10px;
+        transition: .3s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.deadLine {
+
+    &::before {
+        bottom: 30px;
+        margin-left: -100px;
+        padding: 10px;
+        width: 200px;
+        border-radius: 10px;
+        color: #fff;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        content: attr(data-title);
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        margin-bottom: 10px;
+        opacity: 0;
+        transition: opacity .7s, margin-bottom .7s;
+        left: 50%;
+    }
+
+    &::after {
+        content: "";
+        border-top: 10px solid rgba(0, 0, 0, 0.4);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        bottom: 20px;
+        margin-left: -10px;
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        margin-bottom: 10px;
+        opacity: 0;
+        transition: opacity .7s, margin-bottom .7s;
+        left: 50%;
+    }
+
+    &:hover::before {
+        visibility: visible;
+        opacity: 1;
+        margin-bottom: 0;
+    }
+
+    &:hover::after {
+        visibility: visible;
+        opacity: 1;
+        margin-bottom: 0;
+    }
+}
