@@ -20,29 +20,28 @@ const TodoList: FC<TodoListProps> = ({ Todos, SearchTodo }) => {
         return <div style={{ textAlign: 'center' }}>Add tasks please</div>
     }
 
-    let Content = Todos.map(todo =>
-        <li key={todo.id}>
-            <TodoItem
-                Todo={todo}
-            />
-        </li>
+    let Content = Todos.map((todo, i) =>
+        <TodoItem
+            key={todo.id}
+            Todo={todo}
+            index={i}
+        />
     )
 
     if (SearchTodo.length > 1) {
         const SearchTodos = Todos.filter((todo) => todo.name.toLowerCase().indexOf(SearchTodo.toLowerCase()) > -1);
-        Content = SearchTodos.map(todo =>
+        Content = SearchTodos.map((todo, i) =>
             <TodoItem
                 key={todo.id}
                 Todo={todo}
+                index={i}
             />
         )
     }
 
     return (
         <React.Fragment>
-            <ul>
-                {Content}
-            </ul>
+            {Content}
         </React.Fragment>
     )
 }

@@ -11,7 +11,7 @@ const TodoSearching: FC<TodoSearchingProps> = ({ GetTodoSearch }) => {
 
     const [todoSearch, SettodoSearch] = useState<string>('');
 
-    const upDateTodoSearch = (e: any) => {
+    const upDateTodoSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         SettodoSearch(e.target.value);
         GetTodoSearch(todoSearch);
     }

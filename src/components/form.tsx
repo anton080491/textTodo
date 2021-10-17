@@ -20,7 +20,10 @@ const MyForm: FC = () => {
                     <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
             </FormControl>
-            <TextField id="standard-basic" label="Standard" variant="standard" />
+            <div className="block">
+                <i className="fas fa-trash-alt"></i>
+                <TextField id="standard-basic" label="Standard" variant="standard" />
+            </div>
         </React.Fragment>
     )
 }

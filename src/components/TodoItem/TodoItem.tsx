@@ -12,10 +12,11 @@ import './TodoItem.scss';
 import { ITodo } from '../../components/types/types';
 
 interface TodoItemProps {
-    Todo: ITodo
+    Todo: ITodo;
+    index: number;
 }
 
-const TodoItem: FC<TodoItemProps> = ({ Todo }) => {
+const TodoItem: FC<TodoItemProps> = ({ Todo, index }) => {
 
     const { changeTodo, changeDoing, changeDone, deleteTodo, getTaskId } = useContext(MyContext)
 
@@ -53,6 +54,7 @@ const TodoItem: FC<TodoItemProps> = ({ Todo }) => {
     return (
         <Link to={'/' + Todo.id}>
             <div className="TodoItem">
+                {index + 1}
                 <div>{Todo.name}</div>
                 <div className="TodoItem__block">
                     <button style={{ backgroundColor: Todo.todo ? 'red' : '#fff' }}

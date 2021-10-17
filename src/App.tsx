@@ -156,8 +156,6 @@ const App: FC = () => {
               />} />
           </Switch>
           <MyForm />
-
-
           <Modal
             ShowModal={showModal}
             SetShowModal={() => setShowModal(false)}

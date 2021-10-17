@@ -3,7 +3,8 @@ import { TextField } from "@mui/material";
 
 // import styles
 import './AddTodos.scss';
-import theme from '../Theme';
+import useStyles from '../Theme';
+
 
 interface AddTodosProps {
     AddNewTask: (name: string, description: string, deadLineTime: string, deadLineDate: string, typeSelect: string) => void
@@ -18,6 +19,11 @@ const AddTodos: FC<AddTodosProps> = ({ AddNewTask }) => {
 
     const [todoSelect, SettodoSelect] = useState<string>('');
     const [todoCheckbox, SettodoCheckbox] = useState<boolean>(true);
+
+    const [todoInput, setTodoInput] = useState<string>('');
+    console.log(todoInput);
+
+    const classes = useStyles();
 
     const addNewTask = () => {
         if (newTodoName.length < 50 && newTodoName !== '') {
@@ -98,7 +104,9 @@ const AddTodos: FC<AddTodosProps> = ({ AddNewTask }) => {
                     />
                 </label>
             </div>
-            <TextField id="standard-basic" label="Standard" variant="standard" color='primary' />
+            <TextField
+                onChange={(event) => setTodoInput(event.target.value)}
+                id="standard-basic" label="standard" variant="standard" value={todoInput} className={classes.root} color='warning' />
         </div>
     )
 }
